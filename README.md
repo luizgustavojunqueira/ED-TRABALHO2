@@ -19,4 +19,5 @@ heapsort
 Para executar faça
 
 make
+
 ./programa
