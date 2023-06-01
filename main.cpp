@@ -19,9 +19,7 @@ int main(){
                 v[i] = rand() % 10000;
             }
 
-            time_t inicio, fim;
-            
-            time(&inicio);
+            clock_t inicio = clock();
 
             ABB abb;
             for(int i = 0; i < inc; i++){
@@ -30,12 +28,13 @@ int main(){
 
             abb.printar();
 
-            time(&fim);
+            mediaTempo += (double)(clock() - inicio)/CLOCKS_PER_SEC;
 
-            cout << "Demorou: " << fixed << double(fim - inicio) << setprecision(20) << endl;
             
             abb.~ABB();
         }
+        
+        cout << inc <<" numeros, demorou: " << fixed << mediaTempo << setprecision(20) << endl;
         
         mediaTempo = mediaTempo / rept;
     }
