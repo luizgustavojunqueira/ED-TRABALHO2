@@ -64,7 +64,7 @@ void ABB::printar(){
 void ABB::printar(No* x){
     if(x != NULL){
         printar(x->esq);
-        cout << x->chave << endl;
+        //cout << x->chave << " ";
         printar(x->dir);
     }
 }
