@@ -1,3 +1,4 @@
 enunciado.pdf
 *.o
 programa
+.vscode
