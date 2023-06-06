@@ -1,23 +1,13 @@
 # ED-TRABALHO2
-implementar os 3 algoritmos
-arvore avl
-arvore binaria de busca
-heapsort
 
-    repetir j = max/step vezes
-        repetir rept vezes
+Para executar o programa utilize o seguinte comando:
 
-            gerar inc valores aleatorios
+    $./ordenacao
 
-            inserir esses valores nas arvores e usa-las para ordenar
-            usar o heapsort para ordenar
+Após isso, insira os seguintes valores, na ordem mostrada a seguir:
 
-            armazenar o tempo gasto (no caso das arvores seria o tempo de todo o processo, inserir e ordenar), fução time()
-    
-        inc += step
-
-Para executar faça
-
-make
-
-./programa
+inc: Tamanho inicial do vetor utilizado para testar os algoritmos
+step: Quanto vetor utilizado para os teste aumenta a cada iteração
+max: Tamanho máximo do vetor de testes
+rept: Quantidade de vezes que os algoritmos serão testados para cada tamanho de vetor
+max_num: Valor máximo que pode ser gerado (pseudo) aleatoriamente para preencher o vetor de teste ([0, max_num[)
