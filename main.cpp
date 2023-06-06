@@ -12,18 +12,15 @@
 #include <random>
 #include <iostream>
 #include <iomanip>
-#include <string>
 
 using namespace std;
 
 int main(int argc, char *argv[])
 {
 
-    int inc = atoi(argv[1]);
-    int step = atoi(argv[2]);
-    int max = atoi(argv[3]);
-    int rept = atoi(argv[4]);
-    int max_num = atoi(argv[5]);
+    int inc, step, max, rept, max_num;
+
+   cin >> inc >> step >> max >> rept >> max_num;
 
     for (int i = inc; i <= max; i += step)
     {
