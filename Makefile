@@ -1,8 +1,8 @@
 CC = g++
 CFLAGS = -Wall -pedantic -std=c++11
 
-programa: main.o abb.o avl.o heapsort.o
-	$(CC) $(CFLAGS) main.o abb.o avl.o heapsort.o -o programa
+ordenacao: main.o abb.o avl.o heapsort.o
+	$(CC) $(CFLAGS) main.o abb.o avl.o heapsort.o -o ordenacao
 
 main.o: main.cpp
 	$(CC) $(CFLAGS) -c main.cpp
@@ -17,4 +17,4 @@ heapsort.o: heapsort.cpp
 	$(CC) $(CFLAGS) -c heapsort.cpp
 
 clean:
-	rm *.o programa
+	rm *.o ordenacao
