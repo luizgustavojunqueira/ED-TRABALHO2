@@ -180,7 +180,7 @@ void AVL::printar(){
 void AVL::printar(NoAVL* p){
     if(p != NULL){
         printar(p->esq);
-        cout << p->chave << " ";
+        //cout << p->chave << " ";
         printar(p->dir);
     }
 }

@@ -61,6 +61,8 @@ int main(int argc, char *argv[])
                 avl.insere(v[k]);
             }
 
+            avl.printar();
+
             mediaTempoAVL += (double)(clock() - inicioAVL) / CLOCKS_PER_SEC;
 
             clock_t inicioHeap = clock();
