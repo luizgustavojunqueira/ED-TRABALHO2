@@ -49,19 +49,19 @@ NoAVL* AVL::ajusta_balanceamento(NoAVL* p) {
   
   p->atualiza_altura();
   
-  if (p->bal() == 2) {       // Caso 1
-    if (p->esq->bal() >= 0)  // Caso 1.1
+  if (p->bal() == 2) {       
+    if (p->esq->bal() >= 0)  
       rotacao_dir(p);
-    else                     // Caso 1.2
+    else                     
       rotacao_dupla_dir(p);
-    p = p->pai;              // após a rotação p desceu 1 nível, precisamos subir de volta
+    p = p->pai;              
   }
-  else if (p->bal() == -2) { // Caso 2
-    if (p->dir->bal() <= 0)  // Caso 2.1
+  else if (p->bal() == -2) { 
+    if (p->dir->bal() <= 0)  
       rotacao_esq(p);
-    else                     // Caso 2.2
+    else                     
       rotacao_dupla_esq(p);
-    p = p->pai;              // após a rotação p desceu 1 nível, precisamos subir de volta
+    p = p->pai;             
   }
   
   return p;
@@ -140,7 +140,7 @@ void AVL::rotacao_esq(NoAVL* p) {
   p->dir = u->esq;
   u->esq = p;
   if (p->dir) p->dir->pai = p;
-  // atualiza alturas
+
   p->atualiza_altura();
   u->atualiza_altura();
 }
@@ -183,4 +183,21 @@ void AVL::printar(NoAVL* p){
         //cout << p->chave << " ";
         printar(p->dir);
     }
+}
+
+//Recebe um vetor v e seu tamanho i
+//insere cada item do vetor na estrutura da arvore
+//e a percorre de forma ordenada.
+//Retorna o tempo gasto para fazer esse processo
+double AVL::medirTempo(int *v, int i){
+  clock_t inicio = clock();
+
+  for (int k = 0; k < i; k++)
+  {
+      insere(v[k]);
+  }
+
+  printar();
+
+  return (double)(clock() - inicio) / CLOCKS_PER_SEC;
 }

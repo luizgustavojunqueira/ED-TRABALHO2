@@ -7,6 +7,8 @@ class Heap{
         ~Heap();
 
         int extrai_maximo();
+
+        double medirTempo();
     
     private:
         int *S;

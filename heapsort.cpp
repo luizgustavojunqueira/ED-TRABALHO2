@@ -1,6 +1,7 @@
 #include "heapsort.h"
 #include <climits>
 #include <stdlib.h>
+#include <iostream>
 
 Heap::Heap(int n, int *vetor){
     tam = n;
@@ -76,4 +77,17 @@ int Heap::extrai_maximo(){
     else{
         return INT_MIN;
     }
+}
+
+//Contabiliza o tempo gasto para extrair 
+//os itens de forma ordenada do heap e o retorna
+double Heap::medirTempo(){
+    clock_t inicio = clock();
+
+    for (int l = 0; l < tam; l++)
+    {
+        int x = extrai_maximo();
+    }
+
+    return (double)(clock() - inicio) / CLOCKS_PER_SEC;
 }

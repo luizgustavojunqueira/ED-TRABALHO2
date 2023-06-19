@@ -35,6 +35,8 @@ public:
 
     void printar();
 
+    double medirTempo(int *v, int i);
+
 private:
     NoAVL *raiz;
 

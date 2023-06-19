@@ -68,3 +68,20 @@ void ABB::printar(No* x){
         printar(x->dir);
     }
 }
+
+//Recebe um vetor v e seu tamanho i
+//insere cada item do vetor na estrutura da arvore
+//e a percorre de forma ordenada.
+//Retorna o tempo gasto para fazer esse processo
+double ABB::medirTempo(int *v, int i){
+    clock_t inicio = clock();
+
+    for (int k = 0; k < i; k++)
+    {
+        insere(v[k]);
+    }
+
+    printar();
+
+    return (double)(clock() - inicio) / CLOCKS_PER_SEC;
+}

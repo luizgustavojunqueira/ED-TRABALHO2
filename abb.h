@@ -22,6 +22,7 @@ public:
     void insere(int chave);
     void limpa();
     void printar();
+    double medirTempo(int *v, int i);
 
 private:
     No* raiz;
