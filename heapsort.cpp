@@ -3,16 +3,9 @@
 #include <stdlib.h>
 #include <iostream>
 
-Heap::Heap(int n, int *vetor){
-    tam = n;
-    S = vetor;
+using namespace std;
 
-    int i;
-    for(i = tam/2 - 1; i>=0; i--){
-        desce(i);
-    }
-    
-}
+Heap::Heap(){}
 
 Heap::~Heap(){
     free(S);
@@ -75,18 +68,26 @@ int Heap::extrai_maximo(){
         return maior;
     }
     else{
-        return INT_MIN;
+        return INT_MAX;
     }
 }
 
 //Contabiliza o tempo gasto para extrair 
-//os itens de forma ordenada do heap e o retorna
-double Heap::medirTempo(){
+//os itens de forma ordenada (decrescente) do heap e o retorna
+double Heap::medirTempo(int n, int* vetor){
     clock_t inicio = clock();
+
+    tam = n;
+    S = vetor;
+
+    int i;
+    for(i = tam/2 - 1; i>=0; i--){
+        desce(i);
+    }
 
     for (int l = 0; l < tam; l++)
     {
-        int x = extrai_maximo();
+        extrai_maximo();
     }
 
     return (double)(clock() - inicio) / CLOCKS_PER_SEC;

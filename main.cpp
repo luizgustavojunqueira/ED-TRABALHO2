@@ -34,9 +34,8 @@ int main(int argc, char *argv[])
         for (int j = 0; j < rept; j++)
         {
 
+            //Inicialização do vetor de testes com números pseudoaleatorios
             int *v = (int *)malloc(i * sizeof(int));
-
-
             for (int k = 0; k < i; k++)
             {
                 v[k] = rand() % max_num;
@@ -50,9 +49,10 @@ int main(int argc, char *argv[])
 
             mediaTempoAVL += avl.medirTempo(v, i);
 
-            Heap h = Heap(i, v);
+            Heap h = Heap();
 
-            mediaTempoHeapSort += h.medirTempo();
+            mediaTempoHeapSort += h.medirTempo(i, v);
+            
         }
 
         mediaTempoABB = mediaTempoABB / rept;

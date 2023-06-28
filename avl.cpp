@@ -37,10 +37,6 @@ void NoAVL::atualiza_altura()
     altura = 1 + (alt_esq > alt_dir ? alt_esq : alt_dir);
 }
 
-AVL::AVL(){
-    raiz = NULL;
-}
-
 NoAVL* AVL::get_raiz(){
     return raiz;
 }
@@ -65,6 +61,11 @@ NoAVL* AVL::ajusta_balanceamento(NoAVL* p) {
   }
   
   return p;
+}
+
+
+AVL::AVL(){
+    raiz = NULL;
 }
 
 void AVL::insere(int chave) {
@@ -119,23 +120,23 @@ void AVL::transplante(NoAVL* u, NoAVL* v) {
 
 void AVL::rotacao_dir(NoAVL* p) {
   NoAVL *u = p->esq;
-  // arruma u e seu pai (o pai de p)
+
   transplante(p, u);
-  // move p para a direita de u, e o filho direito de u para a esquerda de p
+
   p->pai = u;
   p->esq = u->dir;
   u->dir = p;
   if (p->esq) p->esq->pai = p;
-  // atualiza alturas
+
   p->atualiza_altura();
   u->atualiza_altura();
 }
 
 void AVL::rotacao_esq(NoAVL* p) {
   NoAVL *u = p->dir;
-  // arruma u e seu pai (o pai de p)
+
   transplante(p, u);
-  // move p para a esquerda de u, e o filho esquerdo de u para a direita de p
+
   p->pai = u;
   p->dir = u->esq;
   u->esq = p;
@@ -177,6 +178,8 @@ void AVL::printar(){
     printar(raiz);
 }
 
+//Percorre a árvore, de forma em ordem, para simular
+//a ordenação dos valores que foram inseridos na árvore
 void AVL::printar(NoAVL* p){
     if(p != NULL){
         printar(p->esq);

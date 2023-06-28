@@ -3,12 +3,12 @@
 
 class Heap{
     public:
-        Heap(int n, int vetor[]);
+        Heap();
         ~Heap();
 
         int extrai_maximo();
 
-        double medirTempo();
+        double medirTempo(int n, int vetor[]);
     
     private:
         int *S;

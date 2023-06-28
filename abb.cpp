@@ -3,10 +3,8 @@
 
 using namespace std;
 
-// Construtor da classe No
 No::No(const int chave) : chave(chave), pai(NULL), esq(NULL), dir(NULL){}
 
-//Implementações da classe ABB
 ABB::ABB(){
     raiz = NULL;
 }
@@ -61,6 +59,8 @@ void ABB::printar(){
     printar(raiz);
 }
 
+//Percorre a árvore, de forma em ordem, para simular
+//a ordenação dos valores que foram inseridos na árvore
 void ABB::printar(No* x){
     if(x != NULL){
         printar(x->esq);
